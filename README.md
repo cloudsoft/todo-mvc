@@ -15,9 +15,9 @@ DB_HOST=127.0.0.1 DB_PORT=3306 DB_USER=brooklyn DB_PASSWORD=br00k11n DB_NAME=tod
 # App
 Once the app has started, you can access it at http://localhost:8000/app
 
-# Credits
-This front end of this application is based on https://github.com/tastejs/todomvc/tree/gh-pages/examples/angularjs
-The Node JS side is based on https://github.com/yogasaikrishna/todo-app
+# Credits 
+* [The Angular front end](app) is based on https://github.com/tastejs/todomvc/tree/gh-pages/examples/angularjs
+* [The Node JS server](server) is based on https://github.com/yogasaikrishna/todo-app
 
 # Licence
 
