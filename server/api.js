@@ -1,14 +1,7 @@
 module.exports = {
     configure: function (app) {
         app.get('/api', function (req, res) {
-            app.mySqlConnection(function (err) {
-                if(!err) {
-                    res.status(200).send('ok');
-                }
-                else{
-                    sendError(res);
-                }
-            });
+            res.status(200).send('ok');
         });
 
         // create
