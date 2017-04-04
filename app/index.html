@@ -14,11 +14,12 @@
     <section id="todoapp">
         <header id="header">
             <h1>todos</h1>
-            <form id="todo-form" ng-submit="addTodo()">
+            <h1 style="font-size: 38px;top: 155px;color: rgba(175, 47, 47, 0.5);">{{error}}</h1>
+            <form id="todo-form" ng-submit="addTodo()" ng-hide="error">
                 <input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" ng-disabled="saving" autofocus >
             </form>
         </header>
-        <section id="main" ng-show="todos.length" ng-cloak>
+        <section id="main" ng-show="todos.length" ng-hide="error" ng-cloak>
             <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
             <label for="toggle-all">Mark all as complete</label>
             <ul id="todo-list">

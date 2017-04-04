@@ -1,23 +1,20 @@
 /*global angular */
 
 /**
- * Services that persists and retrieves todos from localStorage or a backend API
+ * Services that persists and retrieves todos using a backend API
  * if available.
  *
- * They both follow the same API, returning promises for all changes to the
- * model.
  */
 angular.module('todomvc')
 	.factory('todoStorage', function ($http, $injector) {
 		'use strict';
 
-		// Detect if an API backend is present. If so, return the API module, else
-		// hand off the localStorage adapter
-		return $http.get('/api')
+		// Detect if an API backend is present. If so, return the API module
+		return $http.get('/api', {timeout: 3000})
 			.then(function () {
 				return $injector.get('api');
 			}, function () {
-				return $injector.get('localStorage');
+				return null;
 			});
 	})
 
