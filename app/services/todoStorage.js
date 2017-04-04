@@ -8,9 +8,9 @@
 angular.module('todomvc')
 	.factory('todoStorage', function ($http, $injector) {
 		'use strict';
-
+		
 		// Detect if an API backend is present. If so, return the API module
-		return $http.get('/api', {timeout: 3000})
+		return $http.get('/api', {timeout: 5000})
 			.then(function () {
 				return $injector.get('api');
 			}, function () {
