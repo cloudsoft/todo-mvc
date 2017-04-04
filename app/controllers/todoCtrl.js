@@ -9,6 +9,10 @@ angular.module('todomvc')
 	.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, $filter, store) {
 		'use strict';
 
+		if(store === null){
+			$scope.error = "Could not connect to the database";
+			return;
+		}
 		var todos = $scope.todos = store.todos;
 
 		$scope.newTodo = '';
@@ -38,7 +42,7 @@ angular.module('todomvc')
 				.finally(function () {
 					$scope.saving = false;
 				});
-			
+
 		};
 
 		$scope.editTodo = function (todo) {

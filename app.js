@@ -6,9 +6,13 @@ var expressMetrics = require('express-metrics');
 
 var app = express();
 var pool;
+var options = {
+  index: "app/index.html"
+};
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(__dirname));
+app.use(express.static(__dirname, options));
 
 var error = function(msg) {
   throw msg;
